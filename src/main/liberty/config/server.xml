@@ -1,14 +1,37 @@
-<server description="Open Liberty REST-0 example">
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="tlc server">
+  <!-- Enable features -->
+  <featureManager>
+    <feature>jsp-2.2</feature>
+    <feature>ssl-1.0</feature>
+    <feature>localConnector-1.0</feature>
+    <feature>restConnector-1.0</feature>
+    <feature>json-1.0</feature>
+    <feature>jaxrs-1.1</feature>
+    <feature>servlet-3.0</feature>
+    <feature>jpa-2.0</feature>
+    <feature>beanValidation-1.0</feature>
+    <feature>jndi-1.0</feature>
+    <feature>jdbc-4.0</feature>
+    <feature>monitor-1.0</feature>
+  </featureManager>
+  <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" virtualHost="default_host" />
+  <applicationMonitor updateTrigger="mbean" />
+  <application id="rest_http_war" context-root="/C" location="C:/Users/AlexandreZanettideAl/git/orquestradorbawnovo/target/rest-http.war" name="rest_http_war" type="war">
+  </application>
+</server>
+
+
+<!-- <server description="Open Liberty REST-0 example">
 
   <featureManager>
       <feature>jaxrs-2.1</feature>
-      <!-- Required for Arquillian tests -->     
       <feature>localConnector-1.0</feature>
   </featureManager>
-
-  <httpEndpoint httpPort="${default.http.port}" httpsPort="${default.https.port}"
+  <httpEndpoint httpPort="9080" httpsPort="9443"
                 id="defaultHttpEndpoint" host="*" />
-
   <webApplication location="rest-http.war" contextRoot="${app.context.root}"/>
    
 </server>
+ -->
+
