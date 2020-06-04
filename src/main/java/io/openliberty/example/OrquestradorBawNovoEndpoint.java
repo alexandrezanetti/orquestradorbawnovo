@@ -22,8 +22,6 @@ public class OrquestradorBawNovoEndpoint{
 //        return new Greeting(String.format(template, centroCusto));
 //    }
     
-    
-    
     @GET
     @Path("/v1/conteudo/obterPorId")
     @Produces("application/json")
