@@ -58,10 +58,9 @@ oc project zzzecm
 
 oc import-image orquestradorbawnovo --confirm --from docker.io/alexandrezanetti/orquestradorbawnovo:latest --insecure
 
+#oc delete all -l app=orquestradorbawnovo
 oc new-app --name orquestradorbawnovo -i orquestradorbawnovo
-
 oc expose service/orquestradorbawnovo --hostname orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com
-oc expose service/orquestradorbawnovo
 
 curl http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/obterPorId?centroCusto=123&canal=123&usuario=123&senha=123&objectStore=OS-CAMBIO&id=123
 
