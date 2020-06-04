@@ -4,7 +4,6 @@
   <featureManager>
     <feature>jaxrs-2.1</feature>
     <feature>localConnector-1.0</feature>
-    <feature>restConnector-1.0</feature>
 <!-- 
     <feature>jaxrs-1.1</feature>
     <feature>jsp-2.2</feature>
