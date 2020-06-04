@@ -12,21 +12,21 @@
 FROM websphere-liberty:kernel
 COPY src/main/liberty/config/server.xml /config/
 RUN /opt/ibm/wlp/bin/installUtility install --acceptLicense \
-  cdi-1.2 \
-  concurrent-1.0 \
   jaxrs-2.0 \
-  jndi-1.0 \
-  ssl-1.0 \
-  jsp-2.2 \
-  servlet-3.0 \ 
-  monitor-1.0 \
-  beanvalidation-1.0 \
   localconnector-1.0 \
-  jdbc-4.0 \
-  restconnector-1.0 \
-  jaxrs-1.1 \
-  jpa-2.0 \
-  websocket-1.1
+  restconnector-1.0 
+#  cdi-1.2 \
+#  concurrent-1.0 \
+#  jndi-1.0 \
+#  ssl-1.0 \
+#  jsp-2.2 \
+#  servlet-3.0 \ 
+#  monitor-1.0 \
+#  beanvalidation-1.0 \
+#  jdbc-4.0 \
+#  jaxrs-1.1 \
+#  jpa-2.0 \
+#  websocket-1.1
 ADD target/rest-http.war /config/dropins/
 
 
