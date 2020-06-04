@@ -32,6 +32,11 @@ public class OrquestradorBawNovoEndpoint{
 							@DefaultValue("") @QueryParam("senha") String senha,
 							@DefaultValue("") @QueryParam("objectStore") String objectStore,
 							@DefaultValue("") @QueryParam("id") String id) {
+		System.out.println("ZZZZZZZOrquestradorBawNovoEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZOrquestradorBawNovoEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZOrquestradorBawNovoEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZOrquestradorBawNovoEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZOrquestradorBawNovoEndpointZZZZZZZZZZZZZZ");
 
 		Object msgRequest = new Object();
 		if ("".equals(centroCusto) ) {

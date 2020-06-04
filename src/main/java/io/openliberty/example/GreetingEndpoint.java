@@ -31,6 +31,11 @@ public class GreetingEndpoint {
     @Path("/greeting")
     @Produces("application/json")
     public Greeting greeting(@QueryParam("name") @DefaultValue("World") String name) {
+		System.out.println("ZZZZZZZGreetingEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZGreetingEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZGreetingEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZGreetingEndpointZZZZZZZZZZZZZZ");
+		System.out.println("ZZZZZZZGreetingEndpointZZZZZZZZZZZZZZ");
         return new Greeting(String.format(template, name));
     }
 }
