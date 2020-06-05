@@ -12,7 +12,8 @@
 FROM websphere-liberty:kernel
 COPY src/main/liberty/config/server.xml /config/
 RUN /opt/ibm/wlp/bin/installUtility install --acceptLicense \
-  jaxrs-2.0 \
+  jaxrs-2.1 \
+#  jaxrs-2.0 \
   localconnector-1.0 \
   restconnector-1.0 
 #  cdi-1.2 \
