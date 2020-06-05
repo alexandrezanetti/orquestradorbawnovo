@@ -35,19 +35,17 @@ Usando o ICP ==> TOOLCHAIN está rodando!!!
 Criando o Docker
 ###################################
 ATENCAO!!! Rodar como ADMIN (Root)!!!
-docker login docker.io -u alexandrezanetti -p XXXXXX!
+docker login docker.io -u alexandrezanetti -p Z.....!
 docker login docker.io -u alexandrezanetti --password-stdin
-
 
 docker build -t docker.io/alexandrezanetti/orquestradorbawnovo:latest .
 
-docker images
+#docker images
 
-docker run -p 9080:9080 docker.io/alexandrezanetti/orquestradorbawnovo:latest 
+docker run -p 9080:9080 -p 9443:9443 docker.io/alexandrezanetti/orquestradorbawnovo:latest 
 
 docker push docker.io/alexandrezanetti/orquestradorbawnovo:latest
 
-curl http://localhost:8333/orquestrador/baw/documento/66502418-3093-4993-b778-275fdb3af05d
 
 ###################################
 Importando imagem Docker no OCP
@@ -56,12 +54,16 @@ oc login --token=balBX-dc756NB2yS51nKcLzK7gACkDJPV2fwpTpQIoY --server=https://ap
 
 oc project zzzecm
 
+oc delete imagestream orquestradorbawnovo
 oc import-image orquestradorbawnovo --confirm --from docker.io/alexandrezanetti/orquestradorbawnovo:latest --insecure
 
-#oc delete all -l app=orquestradorbawnovo
+oc delete all -l app=orquestradorbawnovo
+
 oc new-app --name orquestradorbawnovo -i orquestradorbawnovo
+
 oc expose service/orquestradorbawnovo --hostname orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com
 
 curl http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/obterPorId?centroCusto=123&canal=123&usuario=123&senha=123&objectStore=OS-CAMBIO&id=123
+curl http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/obterPorNome?centroCusto=123&canal=123&usuario=123&senha=123&objectStore=OS-CAMBIO&nome=nome
 
 curl http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/actuator/health
