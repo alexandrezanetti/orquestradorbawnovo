@@ -25,11 +25,7 @@ public class ApplicationConfig extends Application {
 	
 	public ApplicationConfig() {
 		// TODO Auto-generated constructor stub
-		System.out.println("ZZZZZZZApplicationConfigZZZZZZZZZZZZZZ");
-		System.out.println("ZZZZZZZApplicationConfigZZZZZZZZZZZZZZ");
-		System.out.println("ZZZZZZZApplicationConfigZZZZZZZZZZZZZZ");
-		System.out.println("ZZZZZZZApplicationConfigZZZZZZZZZZZZZZ");
-		System.out.println("ZZZZZZZApplicationConfigZZZZZZZZZZZZZZ");
+		System.out.println("### ApplicationConfig ###");
 	}
 	
 }

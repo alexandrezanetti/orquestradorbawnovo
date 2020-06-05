@@ -2,44 +2,63 @@
 	"id": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 	"name": "orquestradorbawnovo",
 	"description": "",
-	"order": [
-		"65de12f7-8a86-4d80-dc1d-97c1b4157cd3",
-		"ece3222d-0f50-c6c6-71e9-b9442780670b",
-		"14bc96e8-560c-df60-328c-526f2e6efc40",
-		"c97afdaf-3f4d-ed26-3641-cdddfc1e1e41",
-		"2750f866-33db-9d13-4cf1-93190b0d017f",
-		"90caaec0-4e15-36cd-1d23-a7060c6baba9",
-		"35133e29-70d0-0c98-0f89-9ba8dc4188f2",
-		"263b565e-be16-82d2-fd82-d820b8493984",
-		"45a6c4e1-6709-9530-8b8b-d19edf917042",
-		"ab4c6113-6c96-351c-9132-3d651cf1a203"
-	],
+	"order": [],
 	"folders": [
 		{
 			"name": "cgcc_integracao_conteudo",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"order": [
+				"ce79ae65-f2a2-e86b-f48a-8e0e56fb5e80",
+				"eef1154c-5126-c370-5bdc-45d674ba2ae5",
+				"9b1f640c-302f-bd93-d42d-7f70f1f76d2d",
+				"b540548a-fe75-6981-4299-ec0d086abe4e",
 				"114fbaff-19f3-053c-ed31-fd248fd4d1c4",
 				"2a1a824f-a8a8-3dec-4f52-fe40d88b4aaf",
 				"dfede3d3-b334-d218-64f8-540e5b47080e",
 				"c4f4eaf6-f361-364c-da8c-2249dcedd9a8",
-				"ce79ae65-f2a2-e86b-f48a-8e0e56fb5e80",
-				"eef1154c-5126-c370-5bdc-45d674ba2ae5",
-				"9b1f640c-302f-bd93-d42d-7f70f1f76d2d",
-				"e136d8fe-f42d-ed1a-39e8-a8de9d2f3d4e",
+				"3692f7ce-5daa-251a-8b1c-91cba4dcd9da",
+				"767dc900-e24b-aeb5-ec05-ab45109cf8f5",
+				"756267ce-195e-cf38-6b17-96ece9df0a70",
+				"e0c5e719-2f0a-4718-eddc-598da83e1f0b",
 				"31b4169a-adbb-a591-1fe4-bbb2a90df251",
 				"15972371-a9d6-ed65-d3c0-475aed43f793",
 				"c0652605-5f34-1eb4-89d7-1b4d58f9280f",
-				"d60c20a3-db77-cacb-0b3a-ffc6140d5690"
+				"d60c20a3-db77-cacb-0b3a-ffc6140d5690",
+				"ef5d7ae1-6b7f-f3b8-03bd-044902b5e734",
+				"592fb02a-a339-b886-5192-97ba1f46a494",
+				"263b565e-be16-82d2-fd82-d820b8493984",
+				"90caaec0-4e15-36cd-1d23-a7060c6baba9",
+				"2750f866-33db-9d13-4cf1-93190b0d017f",
+				"e0366c9e-04c7-6c37-42e9-bf6b622d11c4",
+				"35133e29-70d0-0c98-0f89-9ba8dc4188f2",
+				"fc2ed649-3c3a-6211-1a3e-75f4713f1a48",
+				"45a6c4e1-6709-9530-8b8b-d19edf917042",
+				"ab4c6113-6c96-351c-9132-3d651cf1a203"
 			],
 			"owner": 0,
 			"folders_order": [],
 			"id": "57fef120-2c2f-5e52-f57e-82a51e2769d5"
+		},
+		{
+			"name": "cgcc_integracao_pastas",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"order": [
+				"1c3f481c-2cf7-422e-0900-6a593167df09",
+				"33d6bb2e-5cdc-809f-f2c7-9caa2dde7477",
+				"489a588a-3a8b-a996-dea7-e2832f245525",
+				"d6db58d9-f9de-7e5b-b801-ec1b34927156",
+				"50a3f66b-6742-7d25-2743-eb374d7dd49d"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "b76ec038-8771-1aa5-d627-d8a4070a67b6"
 		}
 	],
 	"folders_order": [
-		"57fef120-2c2f-5e52-f57e-82a51e2769d5"
+		"57fef120-2c2f-5e52-f57e-82a51e2769d5",
+		"b76ec038-8771-1aa5-d627-d8a4070a67b6"
 	],
 	"timestamp": 1591306155496,
 	"owner": 0,
@@ -118,35 +137,6 @@
 			"rawModeData": "{\r\n\t\"idDocumento\": \"66502418-3093-4993-b778-275fdb3af05d\",\r\n\t\"nomeDocumento\": \"ZZZName\",\r\n\t\"nomeArquivo\": \"ZZZFileName\",\r\n\t\"dataUltimaModificacao\":  \"2020-05-22T06:00Z\",\r\n\t\"modificadoPor\": \"ZZZModifiededBy\",\r\n\t\"arquivoBase64\": \"WlpaIC0gVGVzdGUgZG8gYXJxdWl2byBCYXNlNjQ=\"\r\n}"
 		},
 		{
-			"id": "14bc96e8-560c-df60-328c-526f2e6efc40",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:8333/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorNomeLogico",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1591373354555,
-			"name": "conteudo/excluirPorNomeLogico",
-			"description": "",
-			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
-			"responses": [],
-			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
-		},
-		{
 			"id": "15972371-a9d6-ed65-d3c0-475aed43f793",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -169,12 +159,42 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373110694,
+			"time": 1591381771358,
 			"name": "conteudo/excluirPorId OCP Fyre",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\"\r\n}"
+		},
+		{
+			"id": "1c3f481c-2cf7-422e-0900-6a593167df09",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/pastas/criarEstrutura",
+			"folder": "b76ec038-8771-1aa5-d627-d8a4070a67b6",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591379507312,
+			"name": "cgcc_integracao_pastas/criarEstrutura",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"idConteudo\": \"{C97BCC59-B870-4858-8BB1-0D5355984C68}\",\r\n  \"caminhoPasta\": \"/GCC/Abertura Conta/Processos/1382/12345\"\r\n}"
 		},
 		{
 			"id": "263b565e-be16-82d2-fd82-d820b8493984",
@@ -187,7 +207,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorId",
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorNomeLogico",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -198,12 +219,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373685843,
-			"name": "conteudo/excluirPorNomeLogico OCP Fyre",
+			"time": 1591382032452,
+			"name": "conteudo/excluirPorNomeLogico",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
-			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
 		},
 		{
 			"id": "2750f866-33db-9d13-4cf1-93190b0d017f",
@@ -216,7 +237,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8333/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorNome",
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorNome",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -227,12 +249,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373610903,
+			"time": 1591382105817,
 			"name": "conteudo/reverterExclusaoLogicaPorNome",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
-			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
 		},
 		{
 			"id": "2a1a824f-a8a8-3dec-4f52-fe40d88b4aaf",
@@ -318,7 +340,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8333/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorId",
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorId",
 			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -330,15 +352,42 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591189734679,
+			"time": 1591381710971,
 			"name": "conteudo/excluirPorId",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "83a2a09e-0489-26c5-bcc2-3da7255bfe17",
-			"folderId": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\"\r\n}"
+		},
+		{
+			"id": "33d6bb2e-5cdc-809f-f2c7-9caa2dde7477",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/pastas/criarEstrutura",
+			"folder": "b76ec038-8771-1aa5-d627-d8a4070a67b6",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591379504247,
+			"name": "cgcc_integracao_pastas/criarEstrutura OCP Fyre",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"titulo\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"extensao\": \".jpg\",\r\n  \"mimetype\": \"image/jpeg\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ],\r\n  \"arquivos\": [\r\n    \"string\"\r\n  ]\r\n  }"
 		},
 		{
 			"id": "35133e29-70d0-0c98-0f89-9ba8dc4188f2",
@@ -351,7 +400,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8333/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorId",
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorId",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -362,12 +412,42 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373661858,
+			"time": 1591382184750,
 			"name": "conteudo/reverterExclusaoLogicaPorId",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
+		},
+		{
+			"id": "3692f7ce-5daa-251a-8b1c-91cba4dcd9da",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/atualizarPorId",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591381506001,
+			"name": "conteudo/atualizarPorId",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"tipoConteudo\": 7,\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"tipoAtualizacao\": \"ATUALIZACAO\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ]\r\n}"
 		},
 		{
 			"id": "45a6c4e1-6709-9530-8b8b-d19edf917042",
@@ -380,7 +460,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8333/rest-http/api/cgcc_integracao_conteudo/rest/utils/converterArquivoBase64",
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/utils/converterArquivoBase64",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -391,7 +472,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373763063,
+			"time": 1591382339299,
 			"name": "utils/converterArquivoBase64",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
@@ -399,7 +480,7 @@
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
 		},
 		{
-			"id": "65de12f7-8a86-4d80-dc1d-97c1b4157cd3",
+			"id": "489a588a-3a8b-a996-dea7-e2832f245525",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
 				{
@@ -409,7 +490,41 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8333/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorIdLogico",
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/criar",
+			"folder": "b76ec038-8771-1aa5-d627-d8a4070a67b6",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591371543858,
+			"name": "cgcc_integracao_conteudo/obterPorId OCP Fyre",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "e136d8fe-f42d-ed1a-39e8-a8de9d2f3d4e",
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"caminhoCompleto\": \"/GCC/Abertura Conta/Processos/1382/12345\",\r\n  \"titulo\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"extensao\": \".jpg\",\r\n  \"mimetype\": \"image/jpeg\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ],\r\n  \"arquivos\": [\r\n    \"string\"\r\n  ]\r\n}"
+		},
+		{
+			"id": "50a3f66b-6742-7d25-2743-eb374d7dd49d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorId",
+			"folder": "b76ec038-8771-1aa5-d627-d8a4070a67b6",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -420,14 +535,104 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591208634957,
-			"name": "conteudo/excluirPorIdLogico",
+			"time": 1591373110694,
+			"name": "conteudo/excluirPorId OCP Fyre",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
 			"isFromCollection": true,
-			"collectionRequestId": "5e810fd8-a014-7bef-c631-9cf02dfea060",
+			"collectionRequestId": "15972371-a9d6-ed65-d3c0-475aed43f793",
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\"\r\n}"
+		},
+		{
+			"id": "592fb02a-a339-b886-5192-97ba1f46a494",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorIdLogico",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591381918017,
+			"name": "conteudo/excluirPorIdLogico OCP Fyre",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
+		},
+		{
+			"id": "756267ce-195e-cf38-6b17-96ece9df0a70",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/atualizarPorNome",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591381655912,
+			"name": "conteudo/atualizarPorNome",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"tipoConteudo\": 7,\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"tipoAtualizacao\": \"ATUALIZACAO\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ]\r\n}"
+		},
+		{
+			"id": "767dc900-e24b-aeb5-ec05-ab45109cf8f5",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/atualizarPorId",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591381613391,
+			"name": "conteudo/atualizarPorId OCP Fyre",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"tipoConteudo\": 7,\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"tipoAtualizacao\": \"ATUALIZACAO\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ]\r\n}"
 		},
 		{
 			"id": "90caaec0-4e15-36cd-1d23-a7060c6baba9",
@@ -440,7 +645,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorNome",
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorNomeLogico",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -451,12 +657,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373582660,
+			"time": 1591382072487,
 			"name": "conteudo/excluirPorNomeLogico OCP Fyre",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
-			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
 		},
 		{
 			"id": "9b1f640c-302f-bd93-d42d-7f70f1f76d2d",
@@ -500,6 +706,7 @@
 				}
 			],
 			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/utils/converterArquivoBase64",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -510,12 +717,42 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373736792,
+			"time": 1591382353307,
 			"name": "utils/converterArquivoBase64 OCP Fyre",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
+		},
+		{
+			"id": "b540548a-fe75-6981-4299-ec0d086abe4e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/criar",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591379499489,
+			"name": "cgcc_integracao_conteudo/criar OCP Fyre",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"caminhoCompleto\": \"/GCC/Abertura Conta/Processos/1382/12345\",\r\n  \"titulo\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"extensao\": \".jpg\",\r\n  \"mimetype\": \"image/jpeg\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ],\r\n  \"arquivos\": [\r\n    \"string\"\r\n  ]\r\n}"
 		},
 		{
 			"id": "c0652605-5f34-1eb4-89d7-1b4d58f9280f",
@@ -528,7 +765,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8333/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorNome",
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorNome",
 			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -540,13 +777,11 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591190005818,
+			"time": 1591381797344,
 			"name": "conteudo/excluirPorNome",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "73da6fda-dd86-4939-2a19-bf655d0258db",
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\"\r\n}"
 		},
 		{
@@ -624,35 +859,6 @@
 			"rawModeData": "{\r\n\t\"idDocumento\": \"66502418-3093-4993-b778-275fdb3af05d\",\r\n\t\"nomeDocumento\": \"ZZZName\",\r\n\t\"nomeArquivo\": \"ZZZFileName\",\r\n\t\"dataUltimaModificacao\":  \"2020-05-22T06:00Z\",\r\n\t\"modificadoPor\": \"ZZZModifiededBy\",\r\n\t\"arquivoBase64\": \"WlpaIC0gVGVzdGUgZG8gYXJxdWl2byBCYXNlNjQ=\"\r\n}"
 		},
 		{
-			"id": "c97afdaf-3f4d-ed26-3641-cdddfc1e1e41",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorIdLogico",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1591373397771,
-			"name": "conteudo/excluirPorNomeLogico OCP Fyre",
-			"description": "",
-			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
-			"responses": [],
-			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
-		},
-		{
 			"id": "ce79ae65-f2a2-e86b-f48a-8e0e56fb5e80",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -713,6 +919,39 @@
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\"\r\n}"
 		},
 		{
+			"id": "d6db58d9-f9de-7e5b-b801-ec1b34927156",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8333/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorId",
+			"folder": "b76ec038-8771-1aa5-d627-d8a4070a67b6",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591189734679,
+			"name": "conteudo/excluirPorId",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "83a2a09e-0489-26c5-bcc2-3da7255bfe17",
+			"folderId": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\"\r\n}"
+		},
+		{
 			"id": "dfede3d3-b334-d218-64f8-540e5b47080e",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -723,7 +962,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/obterPorNome?centroCusto=123&canal=123&usuario=123&senha=123&objectStore=OS-CAMBIO&nome=nome",
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/obterPorNome?centroCusto=123&canal=123&usuario=123&senha=123&objectStore=OS-CAMBIO&nome=nome",
 			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [
 				{
@@ -778,7 +1017,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591366430761,
+			"time": 1591381381666,
 			"name": "cgcc_integracao_conteudo/obterPorNome",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
@@ -786,7 +1025,7 @@
 			"rawModeData": "{\r\n\t\"idDocumento\": \"66502418-3093-4993-b778-275fdb3af05d\",\r\n\t\"nomeDocumento\": \"ZZZName\",\r\n\t\"nomeArquivo\": \"ZZZFileName\",\r\n\t\"dataUltimaModificacao\":  \"2020-05-22T06:00Z\",\r\n\t\"modificadoPor\": \"ZZZModifiededBy\",\r\n\t\"arquivoBase64\": \"WlpaIC0gVGVzdGUgZG8gYXJxdWl2byBCYXNlNjQ=\"\r\n}"
 		},
 		{
-			"id": "e136d8fe-f42d-ed1a-39e8-a8de9d2f3d4e",
+			"id": "e0366c9e-04c7-6c37-42e9-bf6b622d11c4",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
 				{
@@ -796,7 +1035,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/criar",
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorNome",
 			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -805,19 +1044,18 @@
 			"method": "POST",
 			"data": [],
 			"dataMode": "raw",
-			"version": 2,
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591371543858,
-			"name": "cgcc_integracao_conteudo/obterPorId OCP Fyre",
+			"time": 1591382138922,
+			"name": "conteudo/reverterExclusaoLogicaPorNome OCP Fyre",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
-			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"caminhoCompleto\": \"/GCC/Abertura Conta/Processos/1382/12345\",\r\n  \"titulo\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"extensao\": \".jpg\",\r\n  \"mimetype\": \"image/jpeg\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ],\r\n  \"arquivos\": [\r\n    \"string\"\r\n  ]\r\n}"
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
 		},
 		{
-			"id": "ece3222d-0f50-c6c6-71e9-b9442780670b",
+			"id": "e0c5e719-2f0a-4718-eddc-598da83e1f0b",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
 				{
@@ -827,7 +1065,8 @@
 					"enabled": true
 				}
 			],
-			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorIdLogico",
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/atualizarPorNome",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -838,12 +1077,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1591373277456,
-			"name": "conteudo/excluirPorIdLogico OCP Fyre",
+			"time": 1591381676369,
+			"name": "conteudo/atualizarPorNome OCP Fyre",
 			"description": "",
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
-			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"nome\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"tipoConteudo\": 7,\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"tipoAtualizacao\": \"ATUALIZACAO\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ]\r\n}"
 		},
 		{
 			"id": "eef1154c-5126-c370-5bdc-45d674ba2ae5",
@@ -875,6 +1114,66 @@
 			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
 			"responses": [],
 			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"titulo\": \"F123456987852401382-000-E160.jpg\",\r\n  \"classeDocumento\": \"docGccPessoaFisicaRG\",\r\n  \"extensao\": \".jpg\",\r\n  \"mimetype\": \"image/jpeg\",\r\n  \"metadados\": [\r\n    {\r\n      \"nome\": \"GccDtContrato\",\r\n      \"valor\": \"20190801 102658\",\r\n      \"tipo\": \"DATE\"\r\n    }\r\n  ],\r\n  \"arquivos\": [\r\n    \"string\"\r\n  ]\r\n  }"
+		},
+		{
+			"id": "ef5d7ae1-6b7f-f3b8-03bd-044902b5e734",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9080/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/excluirPorIdLogico",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591381889433,
+			"name": "conteudo/excluirPorIdLogico",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"classeExclusaoConteudo\": \"docGccExcluido\",\r\n  \"classeExclusaoAssinatura\": \"docGccAssinaturaExcluido\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\"\r\n}"
+		},
+		{
+			"id": "fc2ed649-3c3a-6211-1a3e-75f4713f1a48",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://orquestradorbawnovo-zzzecm.apps.imbrues.os.fyre.ibm.com/rest-http/api/cgcc_integracao_conteudo/rest/v1/conteudo/reverterExclusaoLogicaPorId",
+			"folder": "57fef120-2c2f-5e52-f57e-82a51e2769d5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1591382197752,
+			"name": "conteudo/reverterExclusaoLogicaPorId OCP Fyre",
+			"description": "",
+			"collectionId": "aec2a967-f6da-c4ba-defc-8ce95a6c5dd5",
+			"responses": [],
+			"rawModeData": "{\r\n  \"centroCusto\": \"string\",\r\n  \"canal\": \"string\",\r\n  \"usuario\": \"string\",\r\n  \"senha\": \"string\",\r\n  \"objectStore\": \"OS-CAMBIO\",\r\n  \"id\": \"{6032036D-0000-C13A-9A1C-4651367FC6E7}\",\r\n  \"choiceList\": \"lstGccCodigoDocumentoClasse\",\r\n  \"nomeMetadadoTipoConteudo\": \"GccCdTipoDocIcor\",\r\n  \"nomeMetadadoStatusConteudo\": \"GccCdStatusDocumento\",\r\n  \"classeAssinatura\": \"docGccAssinatura\"\r\n}"
 		}
 	]
 }

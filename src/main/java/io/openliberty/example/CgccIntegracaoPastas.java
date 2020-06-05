@@ -38,10 +38,10 @@ public class CgccIntegracaoPastas{
 		else if (msgRequest.getCaminhoBase() == null) {
 			return MsgResponse400(msgRequest, "Caminho Base obrigatório(a)");
 		}
-		else if (msgRequest.isCriarOrdemDecrescente() == false) {
+		else if (msgRequest.isCriarOrdemDecrescente() == null ) {
 			return MsgResponse400(msgRequest, "Criar Caminho Ordem Descrescente obrigatório(a)");
 		}
-		else if (msgRequest.getPastas() == null) {
+		else if (msgRequest.getPastas() == null || msgRequest.getPastas().isEmpty()) {
 			return MsgResponse400(msgRequest, "Pastas obrigatório(a)");
 		}
 		else
