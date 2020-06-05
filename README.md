@@ -42,7 +42,7 @@ docker build -t docker.io/alexandrezanetti/orquestradorbawnovo:latest .
 
 #docker images
 
-docker run -p 9080:9080 -p 9443:9443 docker.io/alexandrezanetti/orquestradorbawnovo:latest 
+#docker run -p 9080:9080 -p 9443:9443 docker.io/alexandrezanetti/orquestradorbawnovo:latest 
 
 docker push docker.io/alexandrezanetti/orquestradorbawnovo:latest
 
