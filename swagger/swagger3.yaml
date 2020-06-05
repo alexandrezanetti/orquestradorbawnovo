@@ -1,0 +1,244 @@
+swagger: '2.0'
+info:
+  description: Provê funcionalidades para realização de consultas no repositório do GCC
+  version: 1.0.1
+  title: API de Integração com GCC - Consultas
+host: ecmweb.unitario.teste.bradesco.com.br
+basePath: /cgcc_integracao_consultas/rest/
+schemes:
+  - http
+  - https
+paths:
+  /v1/consultas/searchTemplate:
+    post:
+      summary: Executa uma SearchTemplate com os parametros informados e devolve a lista de conteúdos junto aos metadados solicitados
+      description: ''
+      operationId: searchTemplate
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestSearchTemplate'
+      responses:
+        '200':
+          description: Consulta realizada com sucesso
+          schema:
+            $ref: '#/definitions/ResponseConsulta'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/consultas/query:
+    post:
+      summary: Executa consulta de conteúdos utilizando linguagem SQL
+      description: ''
+      operationId: query
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestQuery'
+      responses:
+        '200':
+          description: Consulta realizada com sucesso
+          schema:
+            $ref: '#/definitions/ResponseConsulta'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+definitions:
+  Conteudo:
+    type: object
+    properties:
+      urlWorkplaceViewer:
+        type: string
+        description: URL para visulizar o conteúdo através do visualizador do WorkplaceXT
+      urlGccnViewer:
+        type: string
+        description: URL para visulizar o conteúdo através do Gccn Viewer
+      urlObterConteudo:
+        type: string
+        description: URL para obter os arquivos do conteúdo através de uma requisição GET
+      titulo:
+        type: string
+        description: Titulo do conteúdo
+      id:
+        type: string
+        description: ID do conteúdo no repositório
+      dataCriacao:
+        type: string
+        description: Data de criação do conteúdo no repositório
+      metadados:
+        type: object
+        description: 'Mapa dos metadados solicitados para retorno. Caso o conteúdo não possua um metadado entre os que foram requisitados, será retornado null'
+        additionalProperties:
+          type: object
+    description: Contempla informações referentes a um conteúdo armazenado no repositório GCC
+  ResponseConsulta:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+      listaConteudo:
+        type: array
+        description: Lista com os conteudos retornados na consulta
+        items:
+          $ref: '#/definitions/Conteudo'
+    description: Contempla as informações retornadas como resultado da execução de uma consulta
+  ResponseBase:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+    description: Contempla as informações básicas que devem ser retornadas após uma requisição
+  Parametro:
+    type: object
+    required:
+      - parametro
+      - valor
+    properties:
+      parametro:
+        type: string
+        example: GccNrIdentificacao
+        description: Nome do parâmetro
+      valor:
+        type: string
+        example: '11122233344'
+        description: Valor do parâmetro
+    description: Parâmetro a ser utilizado na execução da SearchTemplate
+  RequestSearchTemplate:
+    type: object
+    required:
+      - caminhoSearchTemplate
+      - canal
+      - centroCusto
+      - limiteRetorno
+      - metadados
+      - objectStore
+      - parametros
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      caminhoSearchTemplate:
+        type: string
+        example: /GCC/Clientes/Search_Templates/GccClienteSearchCPFCNPJ
+        description: Caminho completo da SearchTemplate a ser executada
+      parametros:
+        type: array
+        description: Parametros que devem ser utilizados na execução da SearchTemplate
+        items:
+          $ref: '#/definitions/Parametro'
+      metadados:
+        type: array
+        description: Metadados que devem ser retornados para cada conteúdo
+        allowEmptyValue: true
+        items:
+          type: string
+      limiteRetorno:
+        type: integer
+        format: int32
+        example: 50
+        description: Limite de conteúdo a ser retornado na consulta
+    description: Contempla o conteúdo a ser enviado na requisição de pesquisa por SearchTemplates
+  RequestQuery:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - classe
+      - limiteRetorno
+      - metadados
+      - objectStore
+      - senha
+      - usuario
+      - where
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      metadados:
+        type: array
+        description: Metadados que devem ser retornados para cada conteúdo
+        allowEmptyValue: true
+        items:
+          type: string
+      classe:
+        type: string
+        example: docGcc
+        description: 'Classe a partir da qual a consulta será realizada, equivalente à clausula FROM (inclui sublclasses)'
+      where:
+        type: string
+        example: GccNrIdentificacao = '98765432100' AND GccCdPessoaIcor = 6
+        description: Clausula where da consulta
+      limiteRetorno:
+        type: integer
+        format: int32
+        example: 50
+        description: Limite de registros que devem ser retornados na consulta
+    description: Contempla o conteúdo a ser enviado na requisição de pesquisa por Query

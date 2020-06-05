@@ -19,10 +19,12 @@ import cgcc.integracao.conteudo.RequestExcluirPorNome;
 import cgcc.integracao.conteudo.RequestExcluirPorNomeLogico;
 import cgcc.integracao.conteudo.RequestReverterExclusaoLogicaPorId;
 import cgcc.integracao.conteudo.RequestReverterExclusaoLogicaPorNome;
+import cgcc.integracao.conteudo.ResponseBase;
+import cgcc.integracao.conteudo.ResponseCriar;
 import cgcc.integracao.conteudo.ResponseObter;
 
 @Path("/cgcc_integracao_conteudo/rest")
-public class OrquestradorBawNovoEndpoint{
+public class CgccIntegracaoConteudo{
     @GET
     @Path("/v1/conteudo/obterPorId")
     @Produces("application/json")
@@ -32,7 +34,7 @@ public class OrquestradorBawNovoEndpoint{
 										@DefaultValue("") @QueryParam("senha") String senha,
 										@DefaultValue("") @QueryParam("objectStore") String objectStore,
 										@DefaultValue("") @QueryParam("id") String id) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ObterPorId ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ObterPorId ###");
 
 		Object msgRequest = new Object();
 		if ("".equals(centroCusto) ) {
@@ -69,7 +71,7 @@ public class OrquestradorBawNovoEndpoint{
 										@DefaultValue("") @QueryParam("senha") String senha,
 										@DefaultValue("") @QueryParam("objectStore") String objectStore,
 										@DefaultValue("") @QueryParam("nome") String nome) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ObterPorNome ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ObterPorNome ###");
 
 		Object msgRequest = new Object();
 		if ("".equals(centroCusto) ) {
@@ -100,7 +102,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/criarUnfiled")
     @Produces("application/json")
 	public Object conteudoCriarUnfiled(RequestCriar msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudoCriarUnfiled ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudoCriarUnfiled ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -144,7 +146,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/criar")
     @Produces("application/json")
 	public Object conteudo​Criar(RequestCriar msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​Criar ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​Criar ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -192,7 +194,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/atualizarPorId")
     @Produces("application/json")
 	public Object conteudoAtualizarPorId(RequestAtualizarPorId msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudoAtualizarPorId ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudoAtualizarPorId ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -239,7 +241,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/atualizarPorNome")
     @Produces("application/json")
 	public Object conteudo​AtualizarPorNome(RequestAtualizarPorNome msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​AtualizarPorNome ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​AtualizarPorNome ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -286,7 +288,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/excluirPorId")
     @Produces("application/json")
 	public Object conteudo​ExcluirPorId(RequestExcluirPorId msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorId ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ExcluirPorId ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -315,7 +317,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/excluirPorNome")
     @Produces("application/json")
 	public Object conteudo​ExcluirPorNome(RequestExcluirPorNome msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorNome ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ExcluirPorNome ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -344,7 +346,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/excluirPorIdLogico")
     @Produces("application/json")
 	public Object conteudo​ExcluirPorIdLogico(RequestExcluirPorIdLogico msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorIdLogico ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ExcluirPorIdLogico ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -382,7 +384,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/excluirPorNomeLogico")
     @Produces("application/json")
 	public Object conteudo​ExcluirPorNomeLogico(RequestExcluirPorNomeLogico msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorNomeLogico ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ExcluirPorNomeLogico ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -420,7 +422,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/reverterExclusaoLogicaPorNome")
     @Produces("application/json")
 	public Object conteudo​ReverterExclusaoLogicaPorNome(RequestReverterExclusaoLogicaPorNome msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ReverterExclusaoLogicaPorNome ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ReverterExclusaoLogicaPorNome ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -452,7 +454,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/reverterExclusaoLogicaPorId")
     @Produces("application/json")
 	public Object conteudo​ReverterExclusaoLogicaPorId(RequestReverterExclusaoLogicaPorId msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ReverterExclusaoLogicaPorId ###");
+		System.out.println("### CgccIntegracaoConteudo - conteudo​ReverterExclusaoLogicaPorId ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -493,7 +495,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/utils/converterArquivoBase64")
     @Produces("application/json")
 	public Object utils​ConverterArquivoBase64(Object msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - utils​ConverterArquivoBase64 ###");
+		System.out.println("### CgccIntegracaoConteudo - utils​ConverterArquivoBase64 ###");
 //		#################
 //		### ZZZ###ZZZ ###
 //		#################
@@ -506,9 +508,9 @@ public class OrquestradorBawNovoEndpoint{
 // RESPOSTAS POSSÍVEIS	
 //###########################################################################
  	private Object MsgResponseBase200(Object MsgRequest) {
- 		Map<String, Object> msgResponse = new HashMap<>();
-         msgResponse.put("status", Response.Status.OK.getStatusCode());
-         msgResponse.put("mensagem", "OK");
+ 		ResponseBase msgResponse = new ResponseBase(); 
+        msgResponse.setStatus(Response.Status.OK.getStatusCode());
+        msgResponse.setMensagem("OK");
  		return Response.status(Response.Status.OK).entity(msgResponse).build();
  	}
 
@@ -529,17 +531,17 @@ public class OrquestradorBawNovoEndpoint{
  	}
 
     private Object MsgResponseCriar201(Object MsgRequest) {
-        Map<String, Object> msgResponse = new HashMap<>();
-        msgResponse.put("status", Response.Status.CREATED.getStatusCode());
-        msgResponse.put("mensagem", "OK");
-        msgResponse.put("id", "ID");
+        ResponseCriar msgResponse = new ResponseCriar();
+        msgResponse.setStatus(Response.Status.CREATED.getStatusCode());
+        msgResponse.setMensagem("OK");
+        msgResponse.setId("ID");
 		return Response.status(Response.Status.CREATED).entity(msgResponse).build();
  	}
  	
  	private Object MsgResponse400(Object MsgRequest, String Msg) {
- 		Map<String, Object> msgResponse = new HashMap<>();
-         msgResponse.put("status", Response.Status.BAD_REQUEST.getStatusCode());
-         msgResponse.put("mensagem", Msg);
+ 		ResponseBase msgResponse = new ResponseBase();
+        msgResponse.setStatus(Response.Status.BAD_REQUEST.getStatusCode());
+        msgResponse.setMensagem(Msg);
  		return Response.status(Response.Status.BAD_REQUEST).entity(msgResponse).build();
     }
  }

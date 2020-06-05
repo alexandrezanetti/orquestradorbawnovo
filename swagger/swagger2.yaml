@@ -1,0 +1,1071 @@
+swagger: '2.0'
+info:
+  description: 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório GCC'
+  version: 1.2.0
+  title: API de Integração com GCC - Conteúdo
+host: ecmweb.unitario.teste.bradesco.com.br
+basePath: /cgcc_integracao_conteudo/rest/
+tags:
+  - name: 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+  - name: Provê funcionalidades úteis que facilitam a utilização da API
+schemes:
+  - http
+  - https
+paths:
+  /v1/conteudo/criarUnfiled:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Cria um conteúdo no repositório GCC, não associado a nenhuma pasta'
+      description: ''
+      operationId: criarUnfiled
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestCriarUnfiled'
+      responses:
+        '201':
+          description: Conteúdo criado com sucesso
+          schema:
+            $ref: '#/definitions/ResponseCriar'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/criar:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: Cria um conteúdo no repositório GCC
+      description: ''
+      operationId: criar
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestCriar'
+      responses:
+        '201':
+          description: Conteúdo criado com sucesso
+          schema:
+            $ref: '#/definitions/ResponseCriar'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/obterPorId:
+    get:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Obtém os arquivos de um conteúdo armazenado no repositório GCC, através do seu ID'
+      description: ''
+      operationId: obterPorId
+      produces:
+        - application/json
+      parameters:
+        - name: centroCusto
+          in: query
+          description: Centro de custo que esta executando a requisição
+          required: true
+          type: string
+        - name: canal
+          in: query
+          description: Canal que está executando a requisição
+          required: true
+          type: string
+        - name: usuario
+          in: query
+          description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+          required: true
+          type: string
+        - name: senha
+          in: query
+          description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+          required: true
+          type: string
+        - name: objectStore
+          in: query
+          description: ObjectStore onde será executada a operação no repositório
+          required: true
+          type: string
+          x-example: OS-CAMBIO
+        - name: id
+          in: query
+          description: ID do conteúdo qual deseja-se obter os arquivos
+          required: true
+          type: string
+          x-example: '{50D39A6C-0000-C038-967D-225A3E03D08C}'
+      responses:
+        '200':
+          description: Conteúdo obtido com sucesso
+          schema:
+            $ref: '#/definitions/ResponseObter'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/obterPorNome:
+    get:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Obtém os arquivos de um conteúdo armazenado no repositório GCC, através de seu nome'
+      description: ''
+      operationId: obterPorNome
+      produces:
+        - application/json
+      parameters:
+        - name: centroCusto
+          in: query
+          description: Centro de custo que esta executando a requisição
+          required: true
+          type: string
+        - name: canal
+          in: query
+          description: Canal que está executando a requisição
+          required: true
+          type: string
+        - name: usuario
+          in: query
+          description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+          required: true
+          type: string
+        - name: senha
+          in: query
+          description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+          required: true
+          type: string
+        - name: objectStore
+          in: query
+          description: ObjectStore onde será executada a operação no repositório
+          required: true
+          type: string
+          x-example: OS-CAMBIO
+        - name: nome
+          in: query
+          description: Nome/título do conteúdo qual deseja-se obter os arquivos
+          required: true
+          type: string
+          x-example: F123456987852401382-000-E160.jpg
+      responses:
+        '200':
+          description: Conteúdo obtido com sucesso
+          schema:
+            $ref: '#/definitions/ResponseObter'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/atualizarPorId:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Atualiza classe e/ou metadados de um conteúdo armazenado no repositório GCC, através de seu ID'
+      description: ''
+      operationId: atualizarPorId
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestAtualizarPorId'
+      responses:
+        '200':
+          description: Conteúdo atualizado com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/atualizarPorNome:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Atualiza classe e/ou metadados de um conteúdo armazenado no repositório GCC, através de seu nome'
+      description: ''
+      operationId: atualizarPorNome
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestAtualizarPorNome'
+      responses:
+        '200':
+          description: Conteúdo atualizado com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/excluirPorId:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Efetua a exclusão definitiva de um conteúdo (e sua assinatura) armazenados no repositório GCC, através do ID do conteúdo'
+      description: ''
+      operationId: excluirPorId
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestExcluirPorId'
+      responses:
+        '200':
+          description: Conteúdo excluído com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/excluirPorNome:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Efetua a exclusão lógica de um conteúdo (e sua assinatura) armazenados no repositório GCC, através do nome/titulo conteúdo'
+      description: ''
+      operationId: excluirPorNome
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestExcluirPorNome'
+      responses:
+        '200':
+          description: Conteúdo excluído com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/excluirPorIdLogico:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Efetua a exclusão lógica de um conteúdo (e sua assinatura) armazenados no repositório GCC, através do ID do conteúdo, alterando a classe de ambos'
+      description: ''
+      operationId: excluirPorIdLogico
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RquestExcluirPorIdLogico'
+      responses:
+        '200':
+          description: Conteúdo excluído com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/excluirPorNomeLogico:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: 'Efetua a exclusão lógica de um conteúdo (e sua assinatura) armazenados no repositório GCC, através do nome/titulo do conteúdo, alterando a classe de ambos'
+      description: ''
+      operationId: excluirPorNomeLogico
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestExcluirPorNomeLogico'
+      responses:
+        '200':
+          description: Conteúdo excluído com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/reverterExclusaoLogicaPorNome:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: "Reverte a exclusão lógica de um conteúdo (e sua assinatura) armazenados no repositório GCC, através do nome/titulo do conteúdo, retornando a classe de ambos Ã\_ anterior"
+      description: ''
+      operationId: reverterExclusaoLogicaPorNome
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestReverterExclusaoLogicaPorNome'
+      responses:
+        '200':
+          description: Exclusão revertida com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/reverterExclusaoLogicaPorId:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de conteúdo no repositório do GCC'
+      summary: "Reverte a exclusão lógica de um conteúdo (e sua assinatura) armazenados no repositório GCC, através do ID do conteúdo, retornando a classe de ambos Ã\_ anterior"
+      description: ''
+      operationId: reverterExclusaoLogicaPorId
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestReverterExclusaoLogicaPorId'
+      responses:
+        '200':
+          description: Exclusão revertida com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /utils/converterArquivoBase64:
+    post:
+      tags:
+        - Provê funcionalidades úteis que facilitam a utilização da API
+      summary: Converte o arquivo em Base64
+      description: ''
+      operationId: converterArquivoBase64
+      consumes:
+        - multipart/form-data
+      produces:
+        - text/plain
+      parameters:
+        - name: arquivo
+          in: formData
+          required: false
+          type: file
+      responses:
+        default:
+          description: successful operation
+definitions:
+  ResponseCriar:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+      id:
+        type: string
+        description: ID do conteúdo criado no repositório
+    description: Contempla as informações retornadas como resultado da execução da criação de conteúdo no repositório
+  ResponseBase:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+    description: Contempla as informações básicas que devem ser retornadas após uma requisição
+  Metadado:
+    type: object
+    required:
+      - nome
+      - tipo
+      - valor
+    properties:
+      nome:
+        type: string
+        example: GccDtContrato
+        description: Nome da propriedade no repositório GCC
+      valor:
+        type: string
+        example: 20190801 102658
+        description: 'Valor da propriedade no repositório GCC. Para metadado do tipo DATE que inclua apenas a data, o valor deve estar no formato ''yyyyMMdd'' e quando incluir hora ''yyyyMMdd HHmmss'''
+      tipo:
+        type: string
+        example: DATE
+        description: Tipo da propriedade no repositório GCC
+        enum:
+          - BOOLEAN
+          - DATE
+          - FLOAT
+          - INTEGER
+          - LONG
+          - STRING
+    description: 'Contempla o nome, valor e tipo do metadado a ser incluido na conteúdo'
+  RequestCriarUnfiled:
+    type: object
+    required:
+      - arquivos
+      - canal
+      - centroCusto
+      - classeDocumento
+      - extensao
+      - metadados
+      - mimetype
+      - objectStore
+      - senha
+      - titulo
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      titulo:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: 'Título do conteúdo a ser armazenado. O ideal é que seja enviado um valor dinâmico, a fim de possibilitar a unicidade dos conteúdos no repositório e que ao final do titulo seja enviada a extensão'
+      classeDocumento:
+        type: string
+        example: docGccPessoaFisicaRG
+        description: Classe de documento a ser utilizada na criação do conteúdo
+      extensao:
+        type: string
+        example: .jpg
+        description: Extensão do conteúdo que está sendo armazenado
+      mimetype:
+        type: string
+        example: image/jpeg
+        description: MimeType do conteúdo que está sendo armazenado - enviar todo em letras minúsculas
+      metadados:
+        type: array
+        description: Lista de metadados a serem armazenados no conteúdo
+        items:
+          $ref: '#/definitions/Metadado'
+      arquivos:
+        type: array
+        description: 'Lista de arquivos, em Base64, que formam o conteúdo'
+        items:
+          type: string
+    description: 'Contempla as informações a serem enviadas na requisição de criação de conteúdo no repositório GCC, sem associá-lo a um dossiê'
+  RequestCriar:
+    type: object
+    required:
+      - arquivos
+      - caminhoCompleto
+      - canal
+      - centroCusto
+      - classeDocumento
+      - extensao
+      - metadados
+      - mimetype
+      - objectStore
+      - senha
+      - titulo
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      caminhoCompleto:
+        type: string
+        example: /GCC/Abertura Conta/Processos/1382/12345
+        description: Caminho completo da estrutura de pasta onde o conteúdo deve ser criado. Enviar vazio para Unfiled Document
+        allowEmptyValue: true
+      titulo:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: 'Título do conteúdo a ser armazenado. O ideal é que seja enviado um valor dinâmico, a fim de possibilitar a unicidade dos conteúdos no repositório e que ao final do titulo seja enviada a extensão'
+      classeDocumento:
+        type: string
+        example: docGccPessoaFisicaRG
+        description: Classe de documento a ser utilizada na criação do conteúdo
+      extensao:
+        type: string
+        example: .jpg
+        description: Extensão do conteúdo que está sendo armazenado
+      mimetype:
+        type: string
+        example: image/jpeg
+        description: MimeType do conteúdo que está sendo armazenado - enviar todo em letras minúsculas
+      metadados:
+        type: array
+        description: Lista de metadados a serem armazenados no conteúdo
+        items:
+          $ref: '#/definitions/Metadado'
+      arquivos:
+        type: array
+        description: 'Lista de arquivos, em Base64, que formam o conteúdo'
+        items:
+          type: string
+    description: Contempla as informações a serem enviadas na requisição de criação de conteúdo no repositório GCC
+  ResponseObter:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+      arquivos:
+        type: array
+        description: 'Lista dos arquivos que compoem o conteúdo, em Base 64'
+        items:
+          type: string
+  RequestAtualizarPorId:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - classeDocumento
+      - id
+      - metadados
+      - nomeMetadadoStatusConteudo
+      - nomeMetadadoTipoConteudo
+      - objectStore
+      - senha
+      - tipoAtualizacao
+      - tipoConteudo
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      id:
+        type: string
+        example: '{6032036D-0000-C13A-9A1C-4651367FC6E7}'
+        description: ID do conteúdo a ser atualizado
+      classeDocumento:
+        type: string
+        example: docGccPessoaFisicaRG
+        description: 'Classe para qual o conteúdo será atualizado. Caso não seja necessário atualizar a classe, enviar como null'
+      nomeMetadadoTipoConteudo:
+        type: string
+        example: GccCdTipoDocIcor
+        description: Nome do metadado que armazena o tipo do conteúdo (icor). Apenas deve ser enviado em caso de atualização de classe (igorar para fraude e recusa)
+      tipoConteudo:
+        type: integer
+        format: int32
+        example: 7
+        description: Codigo do tipo do conteúdo (icor). Apenas deve ser enviado em caso de atualização de classe (igorar para fraude e recusa)
+      nomeMetadadoStatusConteudo:
+        type: string
+        example: GccCdStatusDocumento
+        description: Nome do metadado que armazena o status do conteúdo. Apenas deve ser enviado em caso de atualização de classe
+      tipoAtualizacao:
+        type: string
+        description: Tipo de atualizacao que esta sendo realizada
+        enum:
+          - ATUALIZACAO
+          - FRAUDE
+          - RECUSA
+      metadados:
+        type: array
+        description: Lista de metadados a serem atualizados no conteúdo
+        items:
+          $ref: '#/definitions/Metadado'
+    description: 'Contempla as informações a serem enviadas na requisição para atualização de classe/metadados de conteúdo, através de seu ID.Para atualizar apenas os metadados do conteúdo, classeDocumento deve ser enviada como null. Nesse caso, os atributos nomeMetadadoTipoConteudo, tipoConteudo, nomeMetadadoStatusConteudo e tipoAtualizacao serão irrelevantes. Para atualizar a classe e metadados (se necessário), em classeDocumento deve ser enviado o nome da classe para qual o conteúdo será alterado. Nesse caso, os atributos nomeMetadadoTipoConteudo, tipoConteudo, nomeMetadadoStatusConteudo e tipoAtualizacao devem ser preenchidos. O atributos tipoAtualizacao deve ser enviado como ATUALIZACAO. Para declarar o conteúdo como recusado, em classeDocumento deve ser enviado o nome da classe de recusa. Nesse caso, os atributos nomeMetadadoTipoConteudo e tipoConteudo são irrelevantes, porém nomeMetadadoStatusConteudo e tipoAtualizacao devem ser preenchidos. O atributos tipoAtualizacao deve ser enviado como RECUSA. Para declarar o conteúdo como fraude, em classeDocumento deve ser enviado o nome da classe de fraude. Nesse caso, os atributos nomeMetadadoTipoConteudo e tipoConteudo são irrelevantes, porém nomeMetadadoStatusConteudo e tipoAtualizacao devem ser preenchidos. O atributos tipoAtualizacao deve ser enviado como FRAUDE.'
+  RequestAtualizarPorNome:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - classeDocumento
+      - metadados
+      - nome
+      - nomeMetadadoStatusConteudo
+      - nomeMetadadoTipoConteudo
+      - objectStore
+      - senha
+      - tipoAtualizacao
+      - tipoConteudo
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      nome:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: Nome/titulo do conteúdo a ser atualizado
+      classeDocumento:
+        type: string
+        example: docGccPessoaFisicaRG
+        description: 'Classe para qual o conteúdo será atualizado. Caso não seja necessário atualizar a classe, enviar como null'
+      nomeMetadadoTipoConteudo:
+        type: string
+        example: GccCdTipoDocIcor
+        description: Nome do metadado que armazena o tipo do conteúdo (icor). Apenas deve ser enviado em caso de atualização de classe (igorar para fraude e recusa)
+        allowEmptyValue: true
+      tipoConteudo:
+        type: integer
+        format: int32
+        example: 7
+        description: Codigo do tipo do conteúdo (icor). Apenas deve ser enviado em caso de atualização de classe (igorar para fraude e recusa)
+      nomeMetadadoStatusConteudo:
+        type: string
+        example: GccCdStatusDocumento
+        description: Nome do metadado que armazena o status do conteúdo. Apenas deve ser enviado em caso de atualização de classe
+        allowEmptyValue: true
+      tipoAtualizacao:
+        type: string
+        description: Tipo de atualizacao que esta sendo realizada
+        enum:
+          - ATUALIZACAO
+          - FRAUDE
+          - RECUSA
+      metadados:
+        type: array
+        description: Lista de metadados a serem atualizados no conteúdo
+        items:
+          $ref: '#/definitions/Metadado'
+    description: 'Contempla as informações a serem enviadas na requisição para atualização de classe/metadados de conteúdo, através de seu ID.Para atualizar apenas os metadados do conteúdo, classeDocumento deve ser enviada como null. Nesse caso, os atributos nomeMetadadoTipoConteudo, tipoConteudo, nomeMetadadoStatusConteudo e tipoAtualizacao serão irrelevantes. Para atualizar a classe e metadados (se necessário), em classeDocumento deve ser enviado o nome da classe para qual o conteúdo será alterado. Nesse caso, os atributos nomeMetadadoTipoConteudo, tipoConteudo, nomeMetadadoStatusConteudo e tipoAtualizacao devem ser preenchidos. O atributos tipoAtualizacao deve ser enviado como ATUALIZACAO. Para declarar o conteúdo como recusado, em classeDocumento deve ser enviado o nome da classe de recusa. Nesse caso, os atributos nomeMetadadoTipoConteudo e tipoConteudo são irrelevantes, porém nomeMetadadoStatusConteudo e tipoAtualizacao devem ser preenchidos. O atributos tipoAtualizacao deve ser enviado como RECUSA. Para declarar o conteúdo como fraude, em classeDocumento deve ser enviado o nome da classe de fraude. Nesse caso, os atributos nomeMetadadoTipoConteudo e tipoConteudo são irrelevantes, porém nomeMetadadoStatusConteudo e tipoAtualizacao devem ser preenchidos. O atributos tipoAtualizacao deve ser enviado como FRAUDE.'
+  RequestExcluirPorId:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - id
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      id:
+        type: string
+        example: '{6032036D-0000-C13A-9A1C-4651367FC6E7}'
+        description: ID do conteúdo
+    description: 'Contempla as informações a serem enviadas na requisição de exclusão de conteúdo, através de seu ID, no repositório GCC'
+  RequestExcluirPorNome:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - nome
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      nome:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: Nome/título do conteúdo
+    description: 'Contempla as informações a serem enviadas na requisição de exclusão de conteúdo, através de seu nome, no repositório GCC'
+  RquestExcluirPorIdLogico:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - classeExclusaoAssinatura
+      - classeExclusaoConteudo
+      - id
+      - nomeMetadadoStatusConteudo
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      id:
+        type: string
+        example: '{6032036D-0000-C13A-9A1C-4651367FC6E7}'
+        description: ID do conteúdo
+      classeExclusaoConteudo:
+        type: string
+        example: docGccExcluido
+        description: 'Classe para a qual o conteúdo será alterada, a fim de definir sua exclusão lógica'
+      classeExclusaoAssinatura:
+        type: string
+        example: docGccAssinaturaExcluido
+        description: 'Classe para a qual a assinatura correspondente ao conteúdo será alterada, a fim de definir sua exclusão lógica'
+      nomeMetadadoStatusConteudo:
+        type: string
+        example: GccCdStatusDocumento
+        description: Nome do metadado que armazena o status do conteúdo
+    description: 'Contempla as informações a serem enviadas na requisição de exclusão lógica de conteúdo, através de seu ID, no repositório GCC'
+  RequestExcluirPorNomeLogico:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - classeExclusaoAssinatura
+      - classeExclusaoConteudo
+      - nome
+      - nomeMetadadoStatusConteudo
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      nome:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: Nome/título do conteúdo
+      classeExclusaoConteudo:
+        type: string
+        example: docGccExcluido
+        description: 'Classe para a qual o conteúdo será alterada, a fim de definir sua exclusão lógica'
+      classeExclusaoAssinatura:
+        type: string
+        example: docGccAssinaturaExcluido
+        description: 'Classe para a qual a assinatura correspondente ao conteúdo será alterada, a fim de definir sua exclusão lógica'
+      nomeMetadadoStatusConteudo:
+        type: string
+        example: GccCdStatusDocumento
+        description: Nome do metadado que armazena o status do conteúdo
+    description: 'Contempla as informações a serem enviadas na requisição de exclusão lógica de conteúdo, através de seu nome/titulo, no repositório GCC'
+  RequestReverterExclusaoLogicaPorNome:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - choiceList
+      - classeAssinatura
+      - nome
+      - nomeMetadadoStatusConteudo
+      - nomeMetadadoTipoConteudo
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      nome:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: Nome/titulo do conteúdo cuja exclusão será revertida
+      choiceList:
+        type: string
+        example: lstGccCodigoDocumentoClasse
+        description: Nome da ChoiceList onde será pesquisada a classe do conteúdo a partir do tipo armazenado
+      nomeMetadadoTipoConteudo:
+        type: string
+        example: GccCdTipoDocIcor
+        description: Nome do metadado que armazena o tipo do conteúdo (icor)
+      nomeMetadadoStatusConteudo:
+        type: string
+        example: GccCdStatusDocumento
+        description: Nome do metadado que armazena o status do conteúdo
+      classeAssinatura:
+        type: string
+        example: docGccAssinatura
+        description: Classe para a qual a assinatura do conteúdo deve ser revertida
+    description: 'Contempla as informações necessárias para reversão da exclusão de conteúdo, através do nome de conteudo'
+  RequestReverterExclusaoLogicaPorId:
+    type: object
+    required:
+      - canal
+      - centroCusto
+      - choiceList
+      - classeAssinatura
+      - id
+      - nomeMetadadoStatusConteudo
+      - nomeMetadadoTipoConteudo
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      id:
+        type: string
+        example: '{6032036D-0000-C13A-9A1C-4651367FC6E7}'
+        description: ID do conteúdo cuja exclusão será revertida
+      choiceList:
+        type: string
+        example: lstGccCodigoDocumentoClasse
+        description: Nome da ChoiceList onde será pesquisada a classe do conteúdo a partir do tipo armazenado
+      nomeMetadadoTipoConteudo:
+        type: string
+        example: GccCdTipoDocIcor
+        description: Nome do metadado que armazena o tipo do conteúdo (icor)
+      nomeMetadadoStatusConteudo:
+        type: string
+        example: GccCdStatusDocumento
+        description: Nome do metadado que armazena o status do conteúdo
+      classeAssinatura:
+        type: string
+        example: docGccAssinatura
+        description: Classe para a qual a assinatura do conteúdo deve ser revertida
+    description: 'Contempla as informações necessárias para reversão da exclusão de conteúdo, através do nome de conteudo'

@@ -1,0 +1,398 @@
+swagger: '2.0'
+info:
+  description: Provê funcionalidade para assinar (certificar) digitalmente um conteúdo e armazená-lo no repositório GCC
+  version: 1.1.0
+  title: API de Integração com GCC - Assinador
+host: ecmweb.unitario.teste.bradesco.com.br
+basePath: /cgcc_integracao_assinador/rest/
+schemes:
+  - http
+  - https
+paths:
+  /v1/conteudo/assinar:
+    post:
+      summary: Certifica digitalmente o conteúdo a ser armazenado no repositório GCC
+      description: ''
+      operationId: assinar
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestAssinar'
+      responses:
+        '201':
+          description: Conteúdo assinado e assinatura armazenada com sucesso
+          schema:
+            $ref: '#/definitions/ResponseAssinar'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/conteudo/assinarUnfiled:
+    post:
+      summary: Certifica digitalmente o conteúdo a ser armazenado no repositório GCC
+      description: ''
+      operationId: assinarUnfiled
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestAssinarUnfiled'
+      responses:
+        '201':
+          description: Conteúdo assinado e assinatura armazenada com sucesso
+          schema:
+            $ref: '#/definitions/ResponseAssinar'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+definitions:
+  ResponseAssinar:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+      id:
+        type: string
+        description: ID da assinatura criada no repositório
+    description: Contempla as informações retornadas como resultado da execução da criação da assinatura no repositório
+  ResponseBase:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+    description: Contempla as informações básicas que devem ser retornadas após uma requisição
+  Metadado:
+    type: object
+    required:
+      - nome
+      - tipo
+      - valor
+    properties:
+      nome:
+        type: string
+        example: GccDtContrato
+        description: Nome da propriedade no repositório GCC
+      valor:
+        type: string
+        example: 20190801 102658
+        description: 'Valor da propriedade no repositório GCC. Para metadado do tipo DATE que inclua apenas a data, o valor deve estar no formato ''yyyyMMdd'' e quando incluir hora ''yyyyMMdd HHmmss'''
+      tipo:
+        type: string
+        example: DATE
+        description: Tipo da propriedade no repositório GCC
+        enum:
+          - BOOLEAN
+          - DATE
+          - FLOAT
+          - INTEGER
+          - LONG
+          - STRING
+    description: 'Contempla o nome, valor e tipo do metadado a ser incluido na conteúdo'
+  RequestAssinar:
+    type: object
+    required:
+      - algoritmo
+      - chave
+      - comDados
+      - comSelo
+      - como
+      - enderecoAppNegocio
+      - entradaCriarConteudo
+      - onde
+      - online
+      - politica
+      - quem
+    properties:
+      chave:
+        type: string
+        description: Chave a ser utilizada na geração da assinatura
+      politica:
+        type: string
+        description: Politica a ser utilizada para assinatura
+        enum:
+          - ADRB
+          - ADRT
+          - ADRV
+          - ADRC
+          - ADRA
+          - PADES_BES
+          - PADES_LTV
+      algoritmo:
+        type: string
+        description: Algoritmo a ser utilizado na assinatura
+        enum:
+          - MD5
+          - SHA_1
+          - SHA_224
+          - SHA_256
+          - SHA_384
+          - SHA_512
+          - RIPEMD_128
+          - RIPEMD_160
+          - RIPEMD_256
+          - GOST_3411
+      como:
+        type: string
+        description: Como
+        allowEmptyValue: true
+      quem:
+        type: string
+        description: Quem
+        allowEmptyValue: true
+      onde:
+        type: string
+        description: Onde
+        allowEmptyValue: true
+      enderecoAppNegocio:
+        type: string
+        description: Endereço da aplicação de negócio
+        allowEmptyValue: true
+      comDados:
+        type: boolean
+        example: false
+        description: Assinatura com dados?
+      online:
+        type: boolean
+        example: false
+        description: Assinatura online?
+      comSelo:
+        type: boolean
+        example: false
+        description: Assinatura com selo?
+      entradaCriarConteudo:
+        description: Informações utilizadas para armazenamento da assinatura no repositório
+        $ref: '#/definitions/RequestCriarConteudo'
+  RequestCriarConteudo:
+    type: object
+    required:
+      - arquivos
+      - caminhoCompleto
+      - canal
+      - centroCusto
+      - classeDocumento
+      - extensao
+      - metadados
+      - mimetype
+      - objectStore
+      - senha
+      - titulo
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      caminhoCompleto:
+        type: string
+        example: /GCC/Abertura Conta/Processos/1382/12345
+        description: Caminho completo da estrutura de pasta onde o conteúdo deve ser criado. Enviar vazio para Unfiled Document
+        allowEmptyValue: true
+      titulo:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: 'Título do conteúdo a ser armazenado. O ideal é que seja enviado um valor dinâmico, a fim de possibilitar a unicidade dos conteúdos no repositório e que ao final do titulo seja enviada a extensão'
+      classeDocumento:
+        type: string
+        example: docGccPessoaFisicaRG
+        description: Classe de documento a ser utilizada na criação do conteúdo
+      extensao:
+        type: string
+        example: .jpg
+        description: Extensão do conteúdo que está sendo armazenado
+      mimetype:
+        type: string
+        example: image/jpeg
+        description: MimeType do conteúdo que está sendo armazenado - enviar todo em letras minúsculas
+      metadados:
+        type: array
+        description: Lista de metadados a serem armazenados no conteúdo
+        items:
+          $ref: '#/definitions/Metadado'
+      arquivos:
+        type: array
+        description: 'Lista de arquivos, em Base64, que formam o conteúdo'
+        items:
+          type: string
+    description: Contempla as informações a serem enviadas na requisição de criação de conteúdo no repositório GCC
+  RequestAssinarUnfiled:
+    type: object
+    required:
+      - algoritmo
+      - chave
+      - comDados
+      - comSelo
+      - como
+      - enderecoAppNegocio
+      - entradaCriarConteudoUnfiled
+      - onde
+      - online
+      - politica
+      - quem
+    properties:
+      chave:
+        type: string
+        description: Chave a ser utilizada na geração da assinatura
+      politica:
+        type: string
+        description: Politica a ser utilizada para assinatura
+        enum:
+          - ADRB
+          - ADRT
+          - ADRV
+          - ADRC
+          - ADRA
+          - PADES_BES
+          - PADES_LTV
+      algoritmo:
+        type: string
+        description: Algoritmo a ser utilizado na assinatura
+        enum:
+          - MD5
+          - SHA_1
+          - SHA_224
+          - SHA_256
+          - SHA_384
+          - SHA_512
+          - RIPEMD_128
+          - RIPEMD_160
+          - RIPEMD_256
+          - GOST_3411
+      como:
+        type: string
+        description: Como
+        allowEmptyValue: true
+      quem:
+        type: string
+        description: Quem
+        allowEmptyValue: true
+      onde:
+        type: string
+        description: Onde
+        allowEmptyValue: true
+      enderecoAppNegocio:
+        type: string
+        description: Endereço da aplicação de negócio
+        allowEmptyValue: true
+      comDados:
+        type: boolean
+        example: false
+        description: Assinatura com dados?
+      online:
+        type: boolean
+        example: false
+        description: Assinatura online?
+      comSelo:
+        type: boolean
+        example: false
+        description: Assinatura com selo?
+      entradaCriarConteudoUnfiled:
+        description: Informações utilizadas para armazenamento da assinatura no repositório
+        $ref: '#/definitions/RequestCriarConteudoUnfiled'
+  RequestCriarConteudoUnfiled:
+    type: object
+    required:
+      - arquivos
+      - canal
+      - centroCusto
+      - classeDocumento
+      - extensao
+      - metadados
+      - mimetype
+      - objectStore
+      - senha
+      - titulo
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      titulo:
+        type: string
+        example: F123456987852401382-000-E160.jpg
+        description: 'Título do conteúdo a ser armazenado. O ideal é que seja enviado um valor dinâmico, a fim de possibilitar a unicidade dos conteúdos no repositório e que ao final do titulo seja enviada a extensão'
+      classeDocumento:
+        type: string
+        example: docGccPessoaFisicaRG
+        description: Classe de documento a ser utilizada na criação do conteúdo
+      extensao:
+        type: string
+        example: .jpg
+        description: Extensão do conteúdo que está sendo armazenado
+      mimetype:
+        type: string
+        example: image/jpeg
+        description: MimeType do conteúdo que está sendo armazenado - enviar todo em letras minúsculas
+      metadados:
+        type: array
+        description: Lista de metadados a serem armazenados no conteúdo
+        items:
+          $ref: '#/definitions/Metadado'
+      arquivos:
+        type: array
+        description: 'Lista de arquivos, em Base64, que formam o conteúdo'
+        items:
+          type: string
+    description: 'Contempla as informações a serem enviadas na requisição de criação de conteúdo no repositório GCC, sem associá-lo a um dossiê'

@@ -1,0 +1,490 @@
+swagger: '2.0'
+info:
+  description: 'Provê funcionalidades para criação, recuperação e atualização de dossiês (pastas) no repositório do GCC'
+  version: 1.1.0
+  title: API de Integração com GCC - Pastas
+host: ecmweb.unitario.teste.bradesco.com.br
+basePath: /cgcc_integracao_pastas/rest/
+tags:
+  - name: 'Provê funcionalidades para criação, recuperação e atualização de dossiês (pastas) no repositório do GCC'
+schemes:
+  - http
+  - https
+paths:
+  /v1/pastas/criarEstrutura:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de dossiês (pastas) no repositório do GCC'
+      summary: Cria uma estrutura de pastas no repositório GCC
+      description: ''
+      operationId: criarEstrutura
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestCriarEstruturaPasta'
+      responses:
+        '201':
+          description: Estrutura de pastas criada com sucesso
+          schema:
+            $ref: '#/definitions/ResponseCriarEstruturaPasta'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/pastas/associarConteudo:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de dossiês (pastas) no repositório do GCC'
+      summary: "Associa um conteúdo existente no repositório à uma pasta"
+      description: ''
+      operationId: associarConteudo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestAssociarDocumento'
+      responses:
+        '200':
+          description: Conteúdo associado com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/pastas/pesquisarPorPasta:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de dossiês (pastas) no repositório do GCC'
+      summary: "Pesquisa por conteúdos (e seus metadados) associados à pasta informada"
+      description: ''
+      operationId: pesquisarPorPasta
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestPesquisar'
+      responses:
+        '200':
+          description: Pesquisa realizada com sucesso
+          schema:
+            $ref: '#/definitions/ResponsePesquisar'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/pastas/excluirPasta:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de dossiês (pastas) no repositório do GCC'
+      summary: Exclui uma pasta existente no repositório GCC
+      description: ''
+      operationId: excluirPasta
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestExcluir'
+      responses:
+        '200':
+          description: Exclusão realizada com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+  /v1/pastas/associarDesassociarMassivo:
+    post:
+      tags:
+        - 'Provê funcionalidades para criação, recuperação e atualização de dossiês (pastas) no repositório do GCC'
+      summary: 'Associa os conteúdos existentes em uma pasta de origem para uma pasta de destino, desassociando os conteúdos da pasta de origem'
+      description: ''
+      operationId: associarDesassociarMassivo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: false
+          schema:
+            $ref: '#/definitions/RequestAssociarDesassociarMassivo'
+      responses:
+        '200':
+          description: Associação/desassociação realizada com sucesso
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '400':
+          description: Algumas das informações fornecidas são inválidas
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '401':
+          description: Não foi possível realizar autenticação no repositório de conteúdo com o usuário/senha informados
+          schema:
+            $ref: '#/definitions/ResponseBase'
+        '500':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/ResponseBase'
+definitions:
+  ResponseCriarEstruturaPasta:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+      caminhoPasta:
+        type: string
+        description: Caminho da estrutura de pastas criada
+    description: Contempla as informações retornadas como resultado da execução da criação de estrutura de pastas
+  ResponseBase:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+    description: Contempla as informações básicas que devem ser retornadas após uma requisição
+  Metadado:
+    type: object
+    required:
+      - nome
+      - tipo
+      - valor
+    properties:
+      nome:
+        type: string
+        example: GccDtContrato
+        description: Nome da propriedade no repositório GCC
+      valor:
+        type: string
+        example: 20190801 102658
+        description: 'Valor da propriedade no repositório GCC. Para metadado do tipo DATE que inclua apenas a data, o valor deve estar no formato ''yyyyMMdd'' e quando incluir hora ''yyyyMMdd HHmmss'''
+      tipo:
+        type: string
+        example: DATE
+        description: Tipo da propriedade no repositório GCC
+        enum:
+          - BOOLEAN
+          - DATE
+          - FLOAT
+          - INTEGER
+          - LONG
+          - STRING
+    description: 'Contempla o nome, valor e tipo do metadado a ser incluido na pasta'
+  Pasta:
+    type: object
+    required:
+      - classePasta
+      - metadados
+      - nivel
+      - nome
+    properties:
+      nivel:
+        type: integer
+        format: int32
+        example: 1
+        description: 'Nível, a partir do caminho base, no qual a pasta deverá ser criada'
+      nome:
+        type: string
+        example: '1382'
+        description: Nome da pasta a ser criada
+      classePasta:
+        type: string
+        example: Folder
+        description: Classe da pasta a ser criada no FileNet
+      metadados:
+        type: array
+        description: 'Lista de metadados a serem atribuídos a pasta. Caso nenhum metadado necessite ser atribuido, enviar vazio'
+        allowEmptyValue: true
+        items:
+          $ref: '#/definitions/Metadado'
+    description: 'Define as pastas que deverão ser criadas a partir do caminho base. Exemplo: /GCC/Abertura Conta/Processos/<nivel 1>/<nivel 2>'
+  RequestCriarEstruturaPasta:
+    type: object
+    required:
+      - caminhoBase
+      - canal
+      - centroCusto
+      - criarOrdemDecrescente
+      - objectStore
+      - pastas
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      caminhoBase:
+        type: string
+        example: /GCC/Abertura Conta/Processos
+        description: Caminho da estrutura de pastas a partir do qual as demais pastas serão criadas
+      criarOrdemDecrescente:
+        type: boolean
+        example: false
+        description: Define se a criação das pastas deve ser efetuada do nível mais alto para o mais baixo. Indicado utilizar como TRUE quando a possibilidade dos primeiros níveis a serem criados já existirem.
+      pastas:
+        type: array
+        description: Lista de pastas a serem criadas a partir do caminho base
+        items:
+          $ref: '#/definitions/Pasta'
+    description: Contempla o conteúdo a ser enviado na requisição de criação de estrutura de pastas no repositório GCC
+  RequestAssociarDocumento:
+    type: object
+    required:
+      - caminhoPasta
+      - canal
+      - centroCusto
+      - idConteudo
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      idConteudo:
+        type: string
+        example: '{C97BCC59-B870-4858-8BB1-0D5355984C68}'
+        description: ID do conteúdo existente no repositório
+      caminhoPasta:
+        type: string
+        example: /GCC/Abertura Conta/Processos/1382/12345
+        description: Caminho da pasta (já existente) ao qual o conteúdo deve ser associado
+    description: "Contempla o conteúdo a ser enviado na requisição de associação de conteúdo já existente à uma pasta já existente no repositório GCC"
+  Conteudo:
+    type: object
+    properties:
+      urlWorkplaceViewer:
+        type: string
+        description: URL para visulizar o conteúdo através do visualizador do WorkplaceXT
+      urlGccnViewer:
+        type: string
+        description: URL para visulizar o conteúdo através do Gccn Viewer
+      urlObterConteudo:
+        type: string
+        description: URL para obter os arquivos do conteúdo através de uma requisição GET
+      titulo:
+        type: string
+        description: Titulo do conteúdo
+      id:
+        type: string
+        description: ID do conteúdo no repositório
+      dataCriacao:
+        type: string
+        description: Data de criação do conteúdo no repositório
+      metadados:
+        type: object
+        description: 'Mapa dos metadados solicitados para retorno. Caso o conteúdo não possua um metadado entre os que foram requisitados, será retornado null'
+        additionalProperties:
+          type: object
+    description: Contempla informações referentes a um conteúdo armazenado no repositório GCC
+  ResponsePesquisar:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+        description: Status HTTP
+      mensagem:
+        type: string
+        description: Mensagem de retorno
+      listaConteudo:
+        type: array
+        description: Lista com os conteudos associados a pasta informada
+        items:
+          $ref: '#/definitions/Conteudo'
+    description: Contempla as informações retornadas como resultado da execução da pesquisa por conteúdos associados a uma pasta
+  RequestPesquisar:
+    type: object
+    required:
+      - caminhoPasta
+      - canal
+      - centroCusto
+      - metadados
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      caminhoPasta:
+        type: string
+        example: /GCC/Abertura Conta/Processos/1382/12345
+        description: Caminho da pasta da qual deseja-se obter os conteúdos associados
+      metadados:
+        type: array
+        description: Metadados que devem ser retornados para cada conteúdo
+        allowEmptyValue: true
+        items:
+          type: string
+    description: Contempla o conteúdo a ser enviado na requisição de pesquisa de conteúdos associados em uma estrutura de pastas
+  RequestExcluir:
+    type: object
+    required:
+      - caminho
+      - canal
+      - centroCusto
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      caminho:
+        type: string
+        example: /GCC/Abertura Conta/Processos/1382/12344
+        description: Caminho da pastaa a ser excluida. A ação aplica-se apenas para a ultima pasta da estrutura
+    description: Contempla as informações a serem enviadas na requisição de exclusão de pastas existentes no repositório GCC
+  RequestAssociarDesassociarMassivo:
+    type: object
+    required:
+      - caminhoDestino
+      - caminhoOrigem
+      - canal
+      - centroCusto
+      - objectStore
+      - senha
+      - usuario
+    properties:
+      centroCusto:
+        type: string
+        description: Centro de custo que esta executando a requisição
+      canal:
+        type: string
+        description: Canal que está executando a requisição
+      usuario:
+        type: string
+        description: Usuário para autenticação no repositório GCC (o usuário deve estar criptografado no padrão GCC)
+      senha:
+        type: string
+        description: Senha para autenticação no repositório GCC (a senha deve estar criptografada no padrão GCC)
+      objectStore:
+        type: string
+        example: OS-CAMBIO
+        description: ObjectStore onde será executada a operação no repositório
+      caminhoOrigem:
+        type: string
+        example: /GCC/Abertura Conta/Processos/1382/12345
+        description: Caminho da pasta (já existente) onde os conteúdos estão associados (e serão desassociados)
+      caminhoDestino:
+        type: string
+        example: /GCC/Abertura Conta/Processos/1382/98765
+        description: "Caminho da pasta (já existente) à qual os conteúdos serão associados"
+    description: 'Contempla o conteúdo a ser enviado na requisição para associação/desassociação de conteúdos de uma pasta de origem para uma pasta de destino, no repositório GCC'
