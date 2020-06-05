@@ -10,13 +10,19 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
+import cgcc.integracao.conteudo.RequestAtualizarPorId;
+import cgcc.integracao.conteudo.RequestAtualizarPorNome;
 import cgcc.integracao.conteudo.RequestCriar;
+import cgcc.integracao.conteudo.RequestExcluirPorId;
+import cgcc.integracao.conteudo.RequestExcluirPorIdLogico;
+import cgcc.integracao.conteudo.RequestExcluirPorNome;
+import cgcc.integracao.conteudo.RequestExcluirPorNomeLogico;
+import cgcc.integracao.conteudo.RequestReverterExclusaoLogicaPorId;
+import cgcc.integracao.conteudo.RequestReverterExclusaoLogicaPorNome;
 import cgcc.integracao.conteudo.ResponseObter;
 
 @Path("/cgcc_integracao_conteudo/rest")
 public class OrquestradorBawNovoEndpoint{
-    private static final String template = "Hello, ZZZZZZZZZZZZZZZZZZZZZ %s!";
-
     @GET
     @Path("/v1/conteudo/obterPorId")
     @Produces("application/json")
@@ -93,8 +99,8 @@ public class OrquestradorBawNovoEndpoint{
     @POST
     @Path("/v1/conteudo/criarUnfiled")
     @Produces("application/json")
-	public Object criarUnfiled(RequestCriar msgRequest) {
-		System.out.println("### OrquestradorBawNovoEndpoint - criarUnfiled ###");
+	public Object conteudoCriarUnfiled(RequestCriar msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudoCriarUnfiled ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -130,7 +136,7 @@ public class OrquestradorBawNovoEndpoint{
 		}
 		else
 		{
-			return MsgResponseBase200(msgRequest);
+			return MsgResponseCriar201(msgRequest);
 		}
     }
 
@@ -138,6 +144,7 @@ public class OrquestradorBawNovoEndpoint{
     @Path("/v1/conteudo/criar")
     @Produces("application/json")
 	public Object conteudo​Criar(RequestCriar msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​Criar ###");
 		if (msgRequest.getCentroCusto() == null) {
 			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
 		}
@@ -180,6 +187,321 @@ public class OrquestradorBawNovoEndpoint{
 		}
     }
 
+    
+    @POST
+    @Path("/v1/conteudo/atualizarPorId")
+    @Produces("application/json")
+	public Object conteudoAtualizarPorId(RequestAtualizarPorId msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudoAtualizarPorId ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getId() == null) {
+			return MsgResponse400(msgRequest, "Id obrigatório(a)");
+		}
+		else if (msgRequest.getClasseDocumento() == null) {
+			return MsgResponse400(msgRequest, "Classe Documento obrigatória");
+		}
+		else if (msgRequest.getNomeMetadadoTipoConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadados Tipo Conteudo obrigatório(a)");
+		}
+		else if (msgRequest.getTipoConteudo() == null) {
+			return MsgResponse400(msgRequest, "Tipo Conteudo obrigatório(a)");
+		}
+		else if (msgRequest.getNomeMetadadoStatusConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadados Status Conteudo obrigatório(a)");
+		}
+		else if (msgRequest.getTipoAtualizacao() == null) {
+			return MsgResponse400(msgRequest, "Tipo atualização obrigatório(a)");
+		}
+		else if (msgRequest.getMetadados() == null || msgRequest.getMetadados().isEmpty()) {
+			  return MsgResponse400(msgRequest, "Metadados obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+
+    @POST
+    @Path("/v1/conteudo/atualizarPorNome")
+    @Produces("application/json")
+	public Object conteudo​AtualizarPorNome(RequestAtualizarPorNome msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​AtualizarPorNome ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getNome() == null) {
+			return MsgResponse400(msgRequest, "Nome obrigatório(a)");
+		}
+		else if (msgRequest.getClasseDocumento() == null) {
+			return MsgResponse400(msgRequest, "Classe Documento obrigatória");
+		}
+		else if (msgRequest.getNomeMetadadoTipoConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadados Tipo Conteudo obrigatório(a)");
+		}
+		else if (msgRequest.getTipoConteudo() == null) {
+			return MsgResponse400(msgRequest, "Tipo Conteudo obrigatório(a)");
+		}
+		else if (msgRequest.getNomeMetadadoStatusConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadados Status Conteudo obrigatório(a)");
+		}
+		else if (msgRequest.getTipoAtualizacao() == null) {
+			return MsgResponse400(msgRequest, "Tipo atualização obrigatório(a)");
+		}
+		else if (msgRequest.getMetadados() == null || msgRequest.getMetadados().isEmpty()) {
+			  return MsgResponse400(msgRequest, "Metadados obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+		
+    @POST
+    @Path("/v1/conteudo/excluirPorId")
+    @Produces("application/json")
+	public Object conteudo​ExcluirPorId(RequestExcluirPorId msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorId ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getId() == null) {
+			return MsgResponse400(msgRequest, "Id obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+	
+    @POST
+    @Path("/v1/conteudo/excluirPorNome")
+    @Produces("application/json")
+	public Object conteudo​ExcluirPorNome(RequestExcluirPorNome msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorNome ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getNome() == null) {
+			return MsgResponse400(msgRequest, "Nome obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+
+    @POST
+    @Path("/v1/conteudo/excluirPorIdLogico")
+    @Produces("application/json")
+	public Object conteudo​ExcluirPorIdLogico(RequestExcluirPorIdLogico msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorIdLogico ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getId() == null) {
+			return MsgResponse400(msgRequest, "Id obrigatório(a)");
+		}
+		else if (msgRequest.getClasseExclusaoConteudo() == null) {
+			return MsgResponse400(msgRequest, "Classe Exclusão Conteúdo obrigatório(a)");
+		}
+		else if (msgRequest.getClasseExclusaoAssinatura() == null) {
+			return MsgResponse400(msgRequest, "Classe Exclusão Assinatura obrigatório(a)");
+		}
+		else if (msgRequest.getNomeMetadadoStatusConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadados Status Conteudo obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+	
+    @POST
+    @Path("/v1/conteudo/excluirPorNomeLogico")
+    @Produces("application/json")
+	public Object conteudo​ExcluirPorNomeLogico(RequestExcluirPorNomeLogico msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ExcluirPorNomeLogico ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getNome() == null) {
+			return MsgResponse400(msgRequest, "Nome obrigatório(a)");
+		}
+		else if (msgRequest.getClasseExclusaoConteudo() == null) {
+			return MsgResponse400(msgRequest, "Classe Exclusão Conteúdo obrigatório(a)");
+		}
+		else if (msgRequest.getClasseExclusaoAssinatura() == null) {
+			return MsgResponse400(msgRequest, "Classe Exclusão Assinatura obrigatório(a)");
+		}
+		else if (msgRequest.getNomeMetadadoStatusConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadados Status Conteudo obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+	
+    @POST
+    @Path("/v1/conteudo/reverterExclusaoLogicaPorNome")
+    @Produces("application/json")
+	public Object conteudo​ReverterExclusaoLogicaPorNome(RequestReverterExclusaoLogicaPorNome msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ReverterExclusaoLogicaPorNome ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getNome() == null) {
+			return MsgResponse400(msgRequest, "Nome obrigatório(a)");
+		}
+		else if (msgRequest.getClasseAssinatura() == null) {
+			return MsgResponse400(msgRequest, "Classe Assinatura obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+	
+    @POST
+    @Path("/v1/conteudo/reverterExclusaoLogicaPorId")
+    @Produces("application/json")
+	public Object conteudo​ReverterExclusaoLogicaPorId(RequestReverterExclusaoLogicaPorId msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - conteudo​ReverterExclusaoLogicaPorId ###");
+		if (msgRequest.getCentroCusto() == null) {
+			return MsgResponse400(msgRequest, "Centro de Custo obrigatório(a)");
+		}
+		else if (msgRequest.getCanal() == null) {
+			return MsgResponse400(msgRequest, "Canal obrigatório(a)");
+		}
+		else if (msgRequest.getUsuario() == null) {
+			return MsgResponse400(msgRequest, "Usuário obrigatório(a)");
+		}
+		else if (msgRequest.getSenha() == null) {
+			return MsgResponse400(msgRequest, "Senha obrigatório(a)");
+		}
+		else if (msgRequest.getObjectStore() == null) {
+			return MsgResponse400(msgRequest, "Object Store obrigatório(a)");
+		}
+		else if (msgRequest.getId() == null) {
+			return MsgResponse400(msgRequest, "Id obrigatório(a)");
+		}
+		else if (msgRequest.getChoiceList() == null) {
+			return MsgResponse400(msgRequest, "Choicelist obrigatório(a)");
+		}
+		else if (msgRequest.getNomeMetadadoTipoConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadado Tipo obrigatório(a)");
+		}
+		else if (msgRequest.getNomeMetadadoStatusConteudo() == null) {
+			return MsgResponse400(msgRequest, "Nome Metadado Status obrigatório(a)");
+		}
+		else if (msgRequest.getClasseAssinatura() == null) {
+			return MsgResponse400(msgRequest, "Classe Assinatura obrigatório(a)");
+		}
+		else
+		{
+			return MsgResponseBase200(msgRequest);
+		}
+	}
+	
+    @POST
+    @Path("/utils/converterArquivoBase64")
+    @Produces("application/json")
+	public Object utils​ConverterArquivoBase64(Object msgRequest) {
+		System.out.println("### OrquestradorBawNovoEndpoint - utils​ConverterArquivoBase64 ###");
+//		#################
+//		### ZZZ###ZZZ ###
+//		#################
+//		curl -X POST "http://ecmweb.unitario.teste.bradesco.com.br/cgcc_integracao_conteudo/rest/utils/converterArquivoBase64" -H "accept: text/plain" -H "Content-Type: multipart/form-data" -F "arquivo=@CustomHealthIndicator.java"
+		
+		return MsgResponseBase200(msgRequest);
+	}
+    
 //###########################################################################
 // RESPOSTAS POSSÍVEIS	
 //###########################################################################
