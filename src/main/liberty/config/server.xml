@@ -23,7 +23,7 @@
    </featureManager>
   <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" virtualHost="default_host" />
   <applicationMonitor updateTrigger="mbean" />
-  <application id="rest_http_war" context-root="/C" location="C:/Users/AlexandreZanettideAl/git/orquestradorbawnovo/target/rest-http.war" name="rest_http_war" type="war">
+  <application id="rest_http_war" context-root="/C" location="./target/rest-http.war" name="rest_http_war" type="war">
   </application>
 </server>
 
